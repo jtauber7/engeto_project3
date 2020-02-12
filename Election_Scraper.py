@@ -76,7 +76,8 @@ def get_municipalities_list(names, nums_and_links):
     """Combine names and links lists to list of lists."""
     print("Getting list of municipalities...")
     try:
-        municipalities = [[int(num_and_link[0])] + [name] + [num_and_link[1]] for name, num_and_link in zip(names, nums_and_links)]
+        municipalities = [[int(num_and_link[0]), name, num_and_link[1]] for name, num_and_link in zip(names, nums_and_links)]
+        print(municipalities)
         return municipalities
     except ValueError as err:
         print("Cannot get municipalities list, probably due to changes of volby.cz website or wrong url on volby.cz")
